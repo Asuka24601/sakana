@@ -1,0 +1,132 @@
+:root {
+    --sakana-size-width: 150px;
+    --sakana-size-height: 150px;
+    --love-animation-time: 800ms;
+}
+
+body {
+    background-color: #568492;
+    margin: 0;
+    padding: 0;
+}
+
+.scense {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* bottom: -35%; */
+}
+
+.modelBox {
+    position: absolute;
+    height: 250px;
+    width: 150px;
+    /* border: 0.5px red solid; */
+    top: 85%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+}
+
+.line {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    top: 85%;
+}
+
+.touchBox {
+    z-index: 2;
+    background-color: rgba(225, 225, 225, 0);
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* border: 00.5px blue solid; */
+    left: 8px;
+    top: 3px;
+}
+
+
+.sakana {
+    position: relative;
+    z-index: 0;
+    height: var(--sakana-size-height);
+    width: var(--sakana-size-width);
+    user-select: none;
+    background-image: url("../img/sakana.png");
+    background-size: var(--sakana-size-height) var(--sakana-size-width);
+    background-repeat: no-repeat;
+}
+
+.bar {
+    position: relative;
+    width: 2px;
+    background-color: black;
+    height: 100px;
+    margin: 0 auto;
+
+}
+
+.bar::after {
+
+    width: 10px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    top: 95%;
+    left: -200%;
+    background: black;
+    border-radius: 50%;
+}
+
+#love {
+    position: absolute;
+    z-index: 100;
+    animation: var(--love-animation-time) love_animation;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    /* background: #fc2e5a; */
+
+    opacity: 0;
+}
+
+.clickMe {
+    top: 500px;
+    left: 500px;
+}
+
+@keyframes love_animation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        translate: 0 -50px;
+        opacity: 0;
+    }
+}
+
+#love:before,
+#love:after {
+    position: absolute;
+    content: "";
+    left: 15px;
+    top: 0;
+    width: 15px;
+    height: 24px;
+    background: #fc2e5a;
+    border-radius: 15px 15px 0 0;
+    transform-origin: 0 100%;
+    transform: rotate(-45deg);
+}
+
+#love:after {
+    left: 0;
+    transform-origin: 100% 100%;
+    transform: rotate(45deg);
+}

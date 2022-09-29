@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sakanaForver</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="scense">
+
+        <div class="modelBox" id="trans">
+            <div class="touchBox">
+                <div class="sakana"></div>
+            </div>
+            <div class="bar"></div>
+        </div>
+        <div class="line"></div>
+
+    </div>
+</body>
+
+<script lang="js" type="module">
+
+    import myTick from "./src/script/myTick.js";
+    import myLove from "./src/script/myLove.js"
+
+    var newpos = new myTick(document.querySelector(".modelBox"), document.querySelector(".sakana"));
+    newpos.work();
+
+    var newLove = new myLove(window.document.body);
+    newLove.work();
+
+</script>
+
+</html>
